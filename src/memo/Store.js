@@ -31,10 +31,12 @@ export function memoReducer(state = initDate,action){
 
 // 追加用レデューサー
 function addReduce(state,action){
+    let d = new Date();
+    let f = d.getHours() + ':' + d.getMinutes();
     // 追加するメモのデータ
     let data = {
         message:action.message,
-        created:new Date()
+        created:f
     };
     // データをもらって再構成
     let newdata = state.data.slice();
